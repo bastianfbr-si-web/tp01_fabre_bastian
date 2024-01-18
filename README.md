@@ -6,6 +6,7 @@ Ce TP01 concerne la mise en place d'une architecture web de base pour une page H
 
 Le projet est structuré comme suit :
 
+```markdown
 ┣ 📂src
 ┃ ┣ 📂js
 ┃ ┃ ┗ 📜validation.js
@@ -17,6 +18,7 @@ Le projet est structuré comme suit :
 ┣ 📜index.html
 ┣ 📜package-lock.json
 ┗ 📜package.json
+```
 
 
 - **src**: Le répertoire principal des sources du projet.
