@@ -1,0 +1,21 @@
+@import (less) "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css";
+
+@flat-blue: #3498db;
+@font-family: 'Helvetica', 'Arial', sans-serif;
+@dark-color: darken(@flat-blue, 10%);
+@text-color: #ffffff;
+
+body {
+  font-family: @font-family;
+}
+
+.bg-flat-blue {
+  background-color: @flat-blue;
+  color: @text-color;
+}
+
+header, footer {
+  .container {
+    padding: 1rem;
+  }
+}

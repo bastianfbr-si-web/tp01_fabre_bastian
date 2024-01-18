@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire Compte Client</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header class="bg-primary text-white text-center p-3">
+        <h1>Inscription Compte Client</h1>
+    </header>
+    <section class="container mt-5">
+        <form id="client-form" action="/submit-form" method="post" onsubmit="return validateForm();">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="nom">Nom:</label>
+                    <input type="text" class="form-control" id="nom" name="nom" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="prenom">Prénom:</label>
+                    <input type="text" class="form-control" id="prenom" name="prenom" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="adresse">Adresse:</label>
+                <input type="text" class="form-control" id="adresse" name="adresse" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="cp">Code Postal:</label>
+                    <input type="text" class="form-control" id="cp" name="cp" required pattern="\d{5}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="ville">Ville:</label>
+                    <input type="text" class="form-control" id="ville" name="ville" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tel">Téléphone:</label>
+                <input type="tel" class="form-control" id="tel" name="tel" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="civilite">Civilité:</label>
+                <select class="form-control" id="civilite" name="civilite" required>
+                    <option value="M">Monsieur</option>
+                    <option value="Mme">Madame</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="login">Identifiant:</label>
+                    <input type="text" class="form-control" id="login" name="login" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="password">Mot de passe:</label>
+                    <input type="password" class="form-control" id="password" name="password" required minlength="8">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="confirm-password">Confirmez le mot de passe:</label>
+                    <input type="password" class="form-control" id="confirm-password" name="confirm-password" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Inscrire</button>
+        </form>
+    </section>
+    <footer class="bg-primary text-white text-center p-3 mt-4">
+        <p>© 2024 Compte Client. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+    function validateForm() {
+        var password = $('#password').val();
+        var confirmPassword = $('#confirm-password').val();
+        var isValid = true;
+
+        // Réinitialiser les messages d'erreur précédents
+        $('.error').remove();
+
+        // Vérifier la correspondance des mots de passe
+        if (password !== confirmPassword) {
+            $('#confirm-password').after('<div class="error" style="color: red;">Les mots de passe ne correspondent pas.</div>');
+            isValid = false;
+        }
+
+        // Vous pouvez ajouter ici d'autres vérifications...
+
+        // Empêcher la soumission du formulaire si des erreurs ont été trouvées
+        return isValid;
+    }
+    </script>
+</body>
+</html>
