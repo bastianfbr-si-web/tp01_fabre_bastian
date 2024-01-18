@@ -1,0 +1,82 @@
+@import (reference) "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css";
+
+@flat-blue: #3498db;
+@font-family: 'Helvetica', 'Arial', sans-serif;
+@dark-color: darken(@flat-blue, 10%);
+@text-color: #ffffff;
+@error-color: #ff3860;
+
+body {
+  font-family: @font-family;
+  background-color: #f4f4f4;
+  color: @dark-color;
+}
+
+.header, .footer {
+  background-color: @flat-blue;
+  color: @text-color;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+// Augmenter les marges du conteneur principal
+.container {
+  max-width: 960px; // Réduire la largeur maximale pour plus de marge
+  margin: 2rem auto; // Augmenter la marge supérieure et inférieure
+  padding: 0 2rem; // Ajouter du padding horizontal
+}
+
+.form-group {
+  margin-bottom: 1rem; // Réduire l'espacement entre les champs
+}
+
+.btn-primary {
+  background-color: @dark-color;
+  border-color: darken(@dark-color, 5%);
+  &:hover {
+    background-color: lighten(@dark-color, 5%);
+  }
+}
+
+.error {
+  color: @error-color;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+// Adapter le formulaire pour qu'il soit plus compact
+form {
+  background: @text-color;
+  padding: 1rem; // Réduire le padding du formulaire
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .form-control {
+    height: 38px; // Réduire la hauteur des champs de saisie
+    padding: 0.375rem 0.75rem; // Réduire le padding interne
+    font-size: 0.875rem; // Réduire la taille de police
+  }
+
+  .form-row {
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+  }
+
+  .form-group {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  label {
+    font-weight: bold;
+    color: darken(@text-color, 50%);
+    font-size: 0.875rem; // S'assurer que les étiquettes ne sont pas trop grandes
+  }
+}
+
+footer {
+  padding: 1rem 0;
+  background-color: darken(@flat-blue, 10%);
+  color: lighten(@text-color, 10%);
+  font-size: 0.875rem;
+}

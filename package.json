@@ -3,6 +3,6 @@
     "less": "^4.2.0"
   },
   "scripts": {
-    "build": "lessc styles.less styles.css"
+    "build": "lessc src/styles/styles.less src/styles/styles.css"
   }
 }
